@@ -14,6 +14,7 @@
         .method-badge { font-weight: 700; padding: 6px 14px; border-radius: 20px; font-size: 0.7rem; text-transform: uppercase; min-width: 80px; display: inline-block; text-align: center; }
         .fastmm { background-color: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
         .mstmm { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+        .fastmm2 { background-color: #8A9A5B; color: #1E3524; border: 1px solid 8A9A5B; }
         .table thead { background-color: #f1f5f9; color: #475569; font-size: 0.85rem; border-bottom: 2px solid #e2e8f0; }
         .file-link { font-family: monospace; font-size: 0.82rem; color: #2563eb; text-decoration: none; background: #f0f9ff; padding: 4px 10px; border-radius: 6px; border: 1px solid #e0f2fe; display: inline-flex; align-items: center; gap: 5px; }
         .file-link:hover { background: #e0f2fe; color: #1e40af; }
@@ -232,7 +233,7 @@
     $(document).ready(function() {
         const body = $('#tableBody');
         simData.forEach(row => {
-            const mClass = row.Method === 'FaSTMM' ? 'fastmm' : 'mstmm';
+            const mClass = row.Method === 'FaSTMM' ? 'fastmm' : ('MSTMM' ? 'mstmm' : 'fastmm2');
             const fileLink = `<a href="./${row.File}" download class="file-link"><i class="bi bi-download me-1"></i>${row.File}</a>`;
             
             body.append(`
