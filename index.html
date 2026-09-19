@@ -234,9 +234,10 @@
         const body = $('#tableBody');
         simData.forEach(row => {
             const mClass = row.Method === 'FaSTMM' ? 'fastmm' : (row.Method === 'MSTMM' ? 'mstmm' : 'fastmm2');
-            const dataDir = row.Method === 'MSTMM' ? 'MsTMM_data' : 'FaSTMM2_data';
+            const dataDir = row.Method === 'MSTMM' ? 'https://raw.githubusercontent.com/jmkenna/database/main/MsTMM_data' : 'https://raw.githubusercontent.com/jmkenna/database/main/FaSTMM2_data';
             const encodedFile = encodeURIComponent(row.File);
             const fileLink = row.File ? `<a href="${dataDir}/${encodedFile}" download="${row.File}" class="file-link"><i class="bi bi-download me-1"></i>${row.File}</a>` : '';
+            
             //const fileLink = `<a href="./${row.File}" download class="file-link"><i class="bi bi-download me-1"></i>${row.File}</a>`;
             
             body.append(`
